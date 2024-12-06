@@ -1,5 +1,4 @@
-"use client";
-
+'use client'
 import Layout from "@/components/layout/Layout"
 import { useState, useEffect } from "react";
 import Link from "next/link"
@@ -8,7 +7,6 @@ import { Program, setProvider, AnchorProvider, web3, utils, BN } from "@coral-xy
 import { getAssociatedTokenAddress, getAccount, AccountLayout } from '@solana/spl-token';
 import idl from './idl.json';
 import { Buffer } from 'buffer';
-window.Buffer = Buffer;
 
 export default function Presale() {
 
@@ -61,12 +59,13 @@ export default function Presale() {
     const tokenProgram = new solanaweb3.PublicKey("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA");
     const tokenMint = new solanaweb3.PublicKey("ALVGBwqKrZHjc1LL6sV96ZQBA4T1NCub3gUxLFT8FbaL");
     const connection = new solanaweb3.Connection(solanaweb3.clusterApiUrl("devnet"), "confirmed");
-    const provider = new AnchorProvider(connection, window.solana, { preflightCommitment: "confirmed" });
-    const provider1 = setProvider(provider);
-    const program = new Program(idl, programID, provider1);
 
     const presale = async (event) => {
         event.preventDefault()
+        window.Buffer = Buffer;
+        const provider = new AnchorProvider(connection, window.solana, { preflightCommitment: "confirmed" });
+        const provider1 = setProvider(provider);
+        const program = new Program(idl, programID, provider1);
         const userPublicKey = provider.wallet.publicKey;
         try{
         console.log((parseFloat(amountInput).toFixed(4)) * solanaweb3.LAMPORTS_PER_SOL);
