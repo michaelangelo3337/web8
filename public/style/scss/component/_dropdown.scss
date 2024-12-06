@@ -1,0 +1,93 @@
+@use '../abstracts/' as *;
+
+/* dropdown
+-------------------------------------------------------------- */
+.seclect-box {
+    @include flex(flex-start,flex-end);
+    z-index: 99;
+    .dropdown {
+        margin-left: 10px;
+        &.selector-drop {
+            position: relative;
+            background: transparent;
+            background-size: cover;
+            height: 52px;
+            z-index: 99;
+            > a {
+                @include flex(center,flex-start);
+                max-width: 190px;
+                min-width: 190px;
+                padding: 16px 20px;
+                height: 53px;
+                color: $white;
+                text-decoration: none;
+                border-radius: 8px;
+                background: $bg-3;
+                &:after {
+                    @include topcenter;
+                    font-family: 'Font Awesome 5 Pro';
+                    font-size: 14px;
+                    font-weight: 400;
+                    content: "\f078";
+                    position: absolute;
+                    color: $white;
+                    right: 20px;
+                }
+            }
+        }
+        li span {
+            @include transition3;
+            font-size: 15px;
+            line-height: 24px;
+            color : $white;
+        }
+        li {
+            @include transition5;
+            background: transparent;
+            width: 100%;
+            max-width: 190px;
+            padding: 0 10px 0 16px;
+            line-height: 45px;
+            height: 45px;
+            color: $white;
+        }
+        li.active,
+        li:hover {
+            background: $bg-2;
+        }
+    }
+}
+
+.seclect-box .dropdown-menu {
+        max-width: 190px;
+        min-width: 190px;
+        width: 100%;
+        left: 0;
+        height: auto;
+        padding: 0;
+        top: 0;
+        transform: translate(0px, 52px) !important;
+        border: none;
+        color: $white;
+        text-decoration: none;
+        border-radius:0 0 8px 8px;
+        background: $bg-3; 
+        &:hover {
+            cursor: pointer;
+        }
+    &.show {
+        a {
+            background: transparent;
+            width: 100%;
+            padding: 9px 10px 8px 16px;
+            @include transition3;
+            font-size: 15px;
+            line-height: 24px;
+            color: $white;
+            &:active,
+            &:hover {
+                background: $bg-2;
+            }
+        }
+    }
+}

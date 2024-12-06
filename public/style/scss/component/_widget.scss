@@ -1,0 +1,176 @@
+@use '../abstracts/' as *;
+
+/* widget
+-------------------------------------------------------------- */
+
+.widget-link {
+    li {
+        a {
+            &:hover {
+                color: $color-main1;
+            }
+        }
+    }
+}
+
+.widget-title {
+    font-size: 20px;
+    line-height: 28px;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.widget-title-st2 {
+    font-size: 16px;
+    line-height: 1.72;
+    position: relative;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    &::before {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        content: "";
+        border-radius: 1.2px;
+        width: 60px;
+        height: 1px;
+        background-color: $color-hover;
+    }
+}
+
+.widget {
+    .widget-category {
+        position: relative;
+        li {
+            position: relative;
+            padding-left: 14px;
+            margin-bottom: 10px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &::before {
+                position: absolute;
+                left: 0;
+                top: 8px;
+                width: 6px;
+                height: 6px;
+                background-color: $txt-color;
+                opacity: 0.2;
+                content: "";
+                border-radius: 50%;
+            }
+            a {
+                color: $white;
+                span {
+                    color: $txt-color;
+                    @include transition3;
+                }
+                &:hover {
+                  color: $color-hover;  
+                  span {
+                    color: $color-hover;  
+                  }
+                }
+            }
+        }
+    }
+    .widget-recenpost {
+        li {
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            &:last-child {
+                margin-bottom: 0;
+                padding-bottom: 0;
+                &::after {
+                    display: none;
+                }
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: rgba(255,255,255,0.1);
+            }
+        }
+    }
+    .widget-tag {
+        @include flex2;
+        flex-wrap: wrap;
+        li {
+            @include transition3;
+            height: 40px;
+            @include flex(center,center);
+            background-color: $bg-2;
+            border-radius: 6px;
+            margin-right: 8px;
+            padding: 10px 16px;
+            margin-bottom: 8px;
+            a {
+                @include transition3;
+                color: $white;
+                font-size: 14px;
+
+            }
+            &:hover {
+                background-color: $color-hover;
+                a {
+                    color: #000000;
+                } 
+            }
+        }
+    }
+}
+
+.recent-posts {
+    @include flex2;
+    .image {
+        margin-right: 14px;
+        img {
+            border-radius: 6px;
+            height: 76px;
+            width: 76px;
+            min-width: 76px;
+        }
+    }
+    .content {
+        .date {
+            @include flex(center,flex-start);
+            margin-bottom: 5px;
+            font-size: 12px;
+            span {
+                opacity: 0.5;   
+            }
+            svg {
+                opacity: 0.5;
+                margin-right: 10px; 
+                @include transition3;
+                path {
+                    @include transition3;
+                }
+            }
+            &:hover {
+                span {
+                    opacity: 1;
+                }
+                svg {
+                    opacity: 1;
+                    margin-right: 10px; 
+                    path { 
+                        stroke: $color-hover;
+                    }
+                }
+            }
+        }
+        .title {
+            color: $white;
+            margin-bottom: 0;
+            &:hover {
+                color: $color-hover;
+            }
+        }
+    }
+}

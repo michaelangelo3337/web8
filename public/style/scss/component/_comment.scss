@@ -1,0 +1,57 @@
+@use '../abstracts/' as *;
+
+
+/* comment
+-------------------------------------------------------------- */
+.comment { 
+    h4 {
+        margin-bottom: 16px;
+        font-size: 28px;
+    }
+}
+.comment-box {
+    display: flex;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-top: 19px;
+    &.s1 {
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &.rep {
+        margin-left: 65px;
+    }
+    .avt {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 14px;
+        img {
+            width: 100%;
+            height: 100%;
+            
+            object-fit: cover;
+        }
+    }
+    .info {
+        .name {
+            margin-bottom: 0;
+            font-size: 16px;
+        }
+        .meta {
+            margin-bottom: 13px;
+            font-size: 12px;
+        }
+
+        .text {
+            margin-bottom: 7px;
+        }
+        a {  
+            color: $white;
+        }
+    }
+}

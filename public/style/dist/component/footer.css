@@ -1,0 +1,115 @@
+#footer .social li a {
+  width: 38px;
+  height: 38px;
+}
+
+#footer .social li:last-child {
+  margin-right: 0;
+}
+
+#footer .footer-main {
+  padding: 60px 0 36px;
+}
+
+#footer .footer-main .footer-logo,
+#footer .footer-main .widget {
+  padding: 0 15px;
+}
+
+#footer .footer-main .footer-logo {
+  width: 40%;
+}
+
+#footer .footer-main .footer-logo .logo_footer {
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+#footer .footer-main .footer-logo .p {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+#footer .footer-main .widget {
+  width: 20%;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#footer .footer-main .widget:last-child {
+  border: none;
+}
+
+#footer .footer-main .widget.support {
+  padding-left: 62px;
+  width: 24%;
+}
+
+#footer .footer-main .widget.link {
+  width: 16%;
+  padding-left: 62px;
+}
+
+#footer .footer-main .widget-title {
+  margin-bottom: 13px;
+}
+
+#footer .footer-main .widget-link li {
+  margin-bottom: 13px;
+}
+
+#footer .footer-main .widget-link li:last-child {
+  margin-bottom: 0;
+}
+
+#footer .footer-main .widget-link li a {
+  color: #fff;
+}
+
+#footer .footer-main .widget-link li a:hover {
+  color: #86FF00;
+}
+
+#footer .footer-main .widget-link.contact {
+  padding-right: 30px;
+}
+
+#footer .footer-main .widget-link.contact li.email a {
+  text-decoration: underline;
+}
+
+#footer .footer-main .widget-link.contact li p {
+  margin-bottom: 0;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #798DA3;
+}
+
+#footer .footer-main .widget-link.contact li a {
+  font-weight: 400;
+}
+
+#footer .footer-bottom .wrap-fx {
+  padding: 36px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#footer .footer-bottom .wrap-fx .Copyright {
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+#footer .footer-bottom .wrap-fx .Copyright a {
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+/*# sourceMappingURL=footer.css.map */
+
+/*# sourceMappingURL=footer.css.map */

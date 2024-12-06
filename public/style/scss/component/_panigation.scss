@@ -1,0 +1,37 @@
+@use '../abstracts/' as *;
+
+
+/* panigation
+-------------------------------------------------------------- */
+.panigation {
+    @include flex(center,center);
+    li {
+        a {
+            width: 54px;
+            height: 54px;
+            @include flex(center,center);
+            border-radius: 50%;
+            background-color: $bg-3;
+            margin: 0 5px;
+            color: $white;
+            font-size: 17px;
+            font-weight: bold;
+            svg {
+                path {
+                    stroke: $white;
+                    @include transition3;
+                }
+            }
+            &:hover,
+            &.active {
+                color: $color-st2;
+                background-color: $color-hover;
+                svg {
+                    path {
+                        stroke: $color-st2;
+                    }
+                }
+            }
+        }
+    }
+}

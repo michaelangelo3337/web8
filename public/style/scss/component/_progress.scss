@@ -1,0 +1,122 @@
+@use '../abstracts/' as *;
+
+/* progess
+-------------------------------------------------------------- */
+.content-progress-box {
+    .progress-bar {
+        margin-bottom: 23px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &.style2 {
+        .progress-title-holder {
+            margin-bottom: 0;
+        }
+        .progress-title {
+            @include flex(center,space-between);
+            margin-bottom: 6px;
+            font-size:12px;
+            line-height: 1.4;
+            margin-right: 0;
+        }
+        .progress-content {
+            background: linear-gradient(270deg, #86FF00 6.58%, rgba(9, 18, 29, 0) 100%);
+            height: 11px;
+        }
+        .progress-content-outter {
+            height: 17px;
+            @include flex(center,flex-start);
+        }
+        .progress-number-wrapper {
+            text-align: left;
+            margin-top: 6px;
+            @include flex(center,space-between);
+            span {
+                font-size:12px;
+                line-height: 1.4;
+                margin-bottom: 0;
+            }
+        }
+        .progress-title-holder span {
+            font-size: 12px;
+            line-height: 1.4;
+        }
+    }
+}
+.progress-bar {
+    background-color: transparent;
+    color: #798DA3;
+}
+
+.progress-title-holder {
+    padding-bottom: 0;
+    position: relative;
+    text-align: left;
+    margin-bottom: 8px;
+    span {
+        font-weight: 500;
+        font-size: 14px;
+    &.percent{
+        font-size: 15px;
+        color: #fff;
+    }
+    }
+}
+
+.progress-title {
+    z-index: 100;
+    font-weight: 600;
+    font-size: 18px;
+    margin-right: 7px;
+}
+
+.progress-number-wrapper {
+    width: 100%;
+    z-index: 10;
+}
+
+.progress-content-outter {
+    height: 8px;
+    background-color: #171F29;
+    border-radius: 6px;
+}
+
+.progress-content {
+    height: 8px;
+    background-color: #86FF00;
+    border-radius: 6px;
+    width: 0%;
+    /* Initial value */
+}
+
+.white {
+    color: white;
+}
+
+.progress_number {
+    @include flex(center,flex-start);
+}
+
+.project-box-style6 {
+    .progress-title {
+        width: 100%;
+        @include flex(center,space-between);
+    }
+    .progress-title-holder {
+        @include flex(center,space-between);
+    }
+    .content-progress-box.style2 .progress-title-holder span {
+        font-family: 'resobot-bold';
+        font-weight: 700;
+        color: $color-hover;
+        font-size: 16px;
+        line-height: 1.4;
+        &.white {
+            color: $white;
+        }
+        .progress-number-mark {
+            margin-left: 3px;
+        }
+    }
+}

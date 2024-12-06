@@ -1,0 +1,51 @@
+@use '../abstracts/' as *;
+
+/* button
+-------------------------------------------------------------- */
+.wrap-btn {
+    @include flex2;
+}
+.tf-button {
+    height: 52px;
+    @include flex(center,center);
+    padding: 16px 30px;
+
+    --path: 0px 0px, calc(100% - 20px) 0, 130% 100% , calc(100% - 20px) 100%,14px 100%,0px calc(100% - 14px);
+    font-family: 'resobot-bold';
+
+    -webkit-clip-path: polygon(var(--path));
+    clip-path: polygon(var(--path));
+    background-size: 200% 100%;
+    background-position: 0% 0%;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 24px;
+    text-transform: uppercase;
+    @include transition3;
+    &.style1 {
+        background: #798DA3;
+        color: $white;
+        &:hover {
+            background: #86FF00;
+            color: #000000;
+        }
+    }
+    &.style2 {
+        background: #86FF00;
+        color: #000000;
+        &:hover {
+            background: #798DA3;
+            color: $white;
+        }
+    }
+    &.style3 {
+        background: #86FF00;
+        color: #000000;
+        height: 60px;
+        font-size: 16px;
+        &:hover {
+            background: #798DA3;
+            color: $white;
+        }
+    }
+}

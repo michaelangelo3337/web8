@@ -1,0 +1,108 @@
+@use '../abstracts/' as *;
+
+/* footer
+-------------------------------------------------------------- */
+#footer {
+    .social {
+        li {
+            a {
+                width: 38px;
+                height: 38px;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    .footer-main {
+        padding: 60px 0 36px;
+        .footer-logo,
+        .widget {
+            padding: 0 15px;
+        }
+        .footer-logo  {
+            width: 40%;
+            .logo_footer {
+                text-align: left;
+                margin-bottom: 8px;
+            }
+            .p {
+                font-size: 12px;
+                line-height: 1.4;
+            }
+        }
+        .widget {
+            width: 20%;
+            border-right: 1px solid rgba(255,255,255,0.1);
+            &:last-child {
+                border: none;
+            }
+            &.support {
+                padding-left: 62px;
+                width: 24%;
+            }
+            &.link {
+                width: 16%;
+                padding-left: 62px;
+            }
+        }
+
+
+
+        .widget-title {
+            margin-bottom: 13px;
+        }
+        .widget-link {
+            li {
+                margin-bottom: 13px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                a {
+                    color: $white;
+                    &:hover {
+                        color: $color-main1;
+                    }
+                }
+            }
+            &.contact {
+                padding-right: 30px;
+                li {
+                    &.email {
+                        a {
+                            text-decoration: underline;
+                        }
+                    }
+                    p {
+                        margin-bottom: 0;
+                        font-weight: 500;
+                        font-size: 12px;
+                        line-height: 1.4;
+                        color: #798DA3;
+                    }
+                    a {
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+    .footer-bottom {
+        .wrap-fx {
+            padding: 36px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            @include flex(center,space-between);
+            flex-wrap: wrap;
+            .Copyright {
+                font-size: 14px;
+                line-height: 1.4;
+                font-weight: 400;
+                a {
+                    font-size: 14px;
+                    line-height: 1.4;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}

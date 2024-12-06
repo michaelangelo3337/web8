@@ -1,0 +1,60 @@
+@use '../abstracts/' as *;
+
+/* accordion
+-------------------------------------------------------------- */
+.flat-accordion {
+    .flat-toggle {
+        background: #1E2835;
+        border-radius: 20px;
+        margin-bottom: 16px;
+        padding: 16px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        .toggle-title {
+            position: relative;
+            font-size: 20px;
+            line-height: 1.4;
+            color: $white;
+            @include transition3;
+            .icon-Icon {
+                font-size: 28px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                color: $white;
+                @include transition3;
+            }
+            padding-left: 40px;
+            &::after {
+                font-family: 'risebot';
+                position: absolute;
+                content: "\e900";
+                right: 0;
+                top: 0;
+                @include transition3;
+                color: $white;
+            }
+        }
+        .toggle-content {
+            position: relative;
+            margin-bottom: 0;
+            padding: 16px 0 0;
+            margin-top: 16px;
+            margin-left: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        &.active {
+            .toggle-title {
+                color: $color-hover;
+                &::after { 
+                    color: $color-hover;
+                    content: "\e901";
+                }
+                .icon-Icon {
+                    color: $color-hover;
+                }
+            }
+        }
+    }
+}
