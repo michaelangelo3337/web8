@@ -52,8 +52,8 @@ export default function Presale() {
           .then((data) => {setSupplierKey(solanaweb3.Keypair.fromSecretKey(new Uint8Array(data)));})
       }, []);
     
-    const notimportant = new solanaweb3.Keypair("AJSMmkvSfHR4Myrh6EHP4QN4HdmuaFfFe7D8fiug3gSk");
-
+    const notimportant = new solanaweb3.PublicKey("AJSMmkvSfHR4Myrh6EHP4QN4HdmuaFfFe7D8fiug3gSk");
+    const god = new solanaweb3.PublicKey("29RV53SRUwoAX4hy6wesesxM3VaZXjLJZBQwLvjLrgQE");
     const programID = new solanaweb3.PublicKey("GD7RRpUTL71ZeCRxGmgdenudUf62TVNiP6C5K6ZkjFUz");
     const associatedTokenProgram = new solanaweb3.PublicKey("ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL");
     const tokenProgram = new solanaweb3.PublicKey("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA");
@@ -74,14 +74,15 @@ export default function Presale() {
                 console.log("Amount must be greater than zero.");
                 return;
         }
-        
-        const instruction1 = await program.methods.initialize(amount)
+        const clienttime = new BN(Math.floor(Date.now() / 1000));
+        const instruction1 = await program.methods.initialize(clienttime)
         .accounts({
+            peasant: supplierKey.publicKey,
             user: userPublicKey,
-            supplier: supplierKey.publicKey,
             mintAccount: tokenMint,
-            supplierTokenAccount: await getAssociatedTokenAddress(tokenMint, supplierKey.publicKey),
+            peasantTokenAccount: await getAssociatedTokenAddress(tokenMint, supplierKey.publicKey),
             userTokenAccount: await getAssociatedTokenAddress(tokenMint, userPublicKey),
+            god: god,
             tokenProgram: tokenProgram,
             associatedTokenProgram: associatedTokenProgram,
             systemProgram: solanaweb3.SystemProgram.programId,
