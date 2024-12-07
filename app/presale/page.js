@@ -66,7 +66,7 @@ export default function Presale() {
         const provider = new AnchorProvider(connection, window.solana, { preflightCommitment: "confirmed" });
         const provider1 = setProvider(provider);
         const program = new Program(idl, programID, provider1);
-        const userPublicKey = provider.wallet.publicKey;
+        const userPublicKey = new solanaweb3.PublicKey(walletAddress);
         try{
         console.log((parseFloat(amountInput).toFixed(4)) * solanaweb3.LAMPORTS_PER_SOL);
         const amount = new BN((parseFloat(amountInput).toFixed(4)) * solanaweb3.LAMPORTS_PER_SOL); 
