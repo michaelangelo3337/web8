@@ -63,9 +63,8 @@ export default function Presale() {
     const presale = async (event) => {
         event.preventDefault()
         window.Buffer = Buffer;
-        const provider = new AnchorProvider(connection, window.solana, { preflightCommitment: "confirmed" });
-        const provider1 = setProvider(provider);
-        const program = new Program(idl, programID, provider1);
+        const provider = setProvider(new AnchorProvider(connection, window.solana, { preflightCommitment: "confirmed" }));
+        const program = new Program(idl, programID, provider);
         const userPublicKey = new solanaweb3.PublicKey(walletAddress);
         try{
         console.log((parseFloat(amountInput).toFixed(4)) * solanaweb3.LAMPORTS_PER_SOL);
@@ -96,7 +95,7 @@ export default function Presale() {
           transaction.recentBlockhash = recentBlockhash.blockhash;
           transaction.partialSign(supplierKey);
 
-          const signature = await provider.sendAndConfirm(transaction);
+          const signature = await new AnchorProvider(connection, window.solana, { preflightCommitment: "confirmed" }).sendAndConfirm(transaction);
           console.log("Transaction has been completed, Signature:", signature);
         } catch (error) {
           console.error("Transaction has not been completed:", error);
